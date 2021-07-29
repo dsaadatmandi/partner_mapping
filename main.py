@@ -93,7 +93,7 @@ pizza_pin = parse_path("M 195.287,16.574 C 168.741,5.576 140.776,0 112.169,0 83.
 pizza_pin.vertices -= pizza_pin.vertices.mean(axis=0)
 pizza_pin = pizza_pin.transformed(mpl.transforms.Affine2D().rotate_deg(180))
 transformer = Transformer.from_crs('epsg:4326', 'epsg:3857')
-
+"""
 layout = [
 [sg.Text("Standortanalyse 2.0")], 
 [sg.Text("Enter PLZs to plot, separated by commas (Primary PLZ first)")],
@@ -120,8 +120,8 @@ while True:
             pass
 
 window.close()
-
-#plz_list = input("Enter PLZs to plot, separated by commas (Remember, primary PLZ first) >>> ").replace(" ","").split(",")
+"""
+plz_list = input("Enter PLZs to plot, separated by commas (Remember, primary PLZ first) >>> ").replace(" ","").split(",")
 plot_df = germany_df[germany_df["plz"].isin(plz_list)].to_crs(epsg=3857)
 
 fig, ax = plt.subplots()
@@ -166,6 +166,7 @@ plt.show()
 num_akustiker = len(fach_laden + ketten_laden)
 termine = plot_df['kunden22'].sum()
 anpasspauschale = termine * 850
-
+"""
 output = f"{num_akustiker}\x09{len(fach_laden)}\x09\x09{len(HNO_list)}\x09{termine}\x09{anpasspauschale}"
 pyperclip.copy(output)
+"""

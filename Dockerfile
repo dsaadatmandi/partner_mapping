@@ -11,4 +11,4 @@ RUN conda-pack -n tmpenv -o /tmp/env.tar && \
 
 RUN /venv/bin/conda-unpack
 
-COPY main.py dockerised
+COPY main.py ./main.py
